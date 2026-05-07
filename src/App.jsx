@@ -1,5 +1,5 @@
 
-import './App.css'
+import './App.css';
 import { Sidebar } from './components/Sidebar'
 import { Mainview } from './components/Mainview'
 
