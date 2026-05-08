@@ -12,47 +12,45 @@ export  const  Sidebar = () => {
         {   logo : <Deliveryimg /> , name : "Delivery" },
         {   logo : <Marketingimg /> , name : "Marketing" },
         {   logo : <Analyticsimg /> , name : "Analysis" },
-        {   logo : <Payoutsimg /> , name : "Payouts" },
+        {   logo : <Payoutsimg /> , name : "Payouts" ,color : "bg-[#ffffff1a]" },
         {   logo : <Discountsimg  /> , name : "Discounts" },
         {   logo : <Audienceimg /> , name : "Audience" },
         {   logo : <Appearancesimg /> , name : "Appearances" },
         {   logo : <Pluginsimg  /> , name : "Plugins" },
     ]
+    
 
     return (
         <>
-         <div className="bg-[#1e2640]  text-white">
+         <div className="bg-[#1e2640]  text-white h-[100vh]">
 
-
-              <div>
-                  <img src = {Nishayanimg}
-                    width="18" height = "18" />
+              <div className="grid grid-cols-3 p-6 items-center ">
+                    <div>
+                    <img src = {Nishayanimg}
+                        width="40" height = "40" 
+                         className="rounded-sm"
+                        />
+                    </div>
                 <div> 
                     <span> Nishyan </span>   
-                    <span> Visit  store </span>
+                    <span className="text-xs"> Visit  store </span>
                   </div>
-                  <div> <Dropdownimg /> </div>
+                  <div className="flex justify-center  items-center"> <Dropdownimg /> </div>
               </div>
 
             {/* options List  */}
-             <div>
+             <div className=" pt-4 pl-4 pr-3 text-[14px]">
                      {OptionsList?.map(i => {
                        return (
-                        <div className="grid grid-cols-[2fr,6fr] pt-2 pb-2 ">
+                        <div className = { `grid grid-cols-[2fr,6fr] pt-2 pb-2 items-center ${i?.color} pl-4 rounded-sm`}>
                            <div> {i?.logo} </div>
                            <div>  {i?.name} </div> 
                         </div>
                         )
                      })}
-                     {/* {OptionsList?.map(i => (
-                        <>
-                          <div>  {i?.logo} </div> 
-                          <div>  {i?.name} </div> 
-                        </>
-                     ))} */}
              </div>
               
-              <div>
+              <div className="grid grid-cols-[1fr,6fr] justify-center">
                 <div> <Walletimg /> </div>
                 <div>
                     <div> Available credits </div>
