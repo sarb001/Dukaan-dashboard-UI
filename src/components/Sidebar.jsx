@@ -24,7 +24,7 @@ export  const  Sidebar = () => {
         <>
          <div className="bg-[#1e2640]  text-white h-[100vh]">
 
-              <div className="grid grid-cols-3 p-6 items-center ">
+              <div className="grid grid-cols-3 p-6 pt-4 items-center ">
                     <div>
                     <img src = {Nishayanimg}
                         width="40" height = "40" 
@@ -50,13 +50,14 @@ export  const  Sidebar = () => {
                      })}
              </div>
               
-              <div className="grid grid-cols-[1fr,6fr] justify-center">
-                <div> <Walletimg /> </div>
-                <div>
+              <div className="grid grid-cols-[1fr,6fr] m-4 justify-center bg-[#ffffff1a] p-1 rounded-sm ">
+                <div className="flex items-center pl-2"> <Walletimg /> </div>
+                <div className="grid grid-rows-2 pl-4">
                     <div> Available credits </div>
                     <span> 222.10 </span>
                 </div>
               </div>
+
          </div>
         </>
     )
