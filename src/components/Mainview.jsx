@@ -27,14 +27,14 @@ export  const Header  = () => {
                 <div className="bg-[#f2f2f2] grid grid-cols-[1fr,8fr] p-2 rounded-[4px] w-72 ">
                   <div className="flex items-center "> <Magnifyglassicon /> </div>
                   <div className="flex">
-                    <input type = "text" placeholder="Search features,tutorials,etc." 
-                     className="focus:outline-none"
+                    <input type = "text" placeholder="Search features,tuts & etc" 
+                     className="focus:outline-none bg-[#f2f2f2] pr"
                     /> 
                   </div>
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 items-center">
+            <div className="grid grid-cols-[1fr,1fr] pl-4 items-center ">
                     <div> <SpeakerIcon /> </div>   
                     <div> <ToggleIcon /> </div>   
             </div>
