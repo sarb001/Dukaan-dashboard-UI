@@ -1,10 +1,26 @@
-import { Magnifyglassicon, Questionimg, SpeakerIcon, ToggleIcon } from "../images/Allimages"
+import { Dropdownimg, Magnifyglassicon, Questionimg, SpeakerIcon, ToggleIcon } from "../images/Allimages"
 
 export  const  Mainview = () => {
     return (
+        <div>
+            <Header />
+            <MainSection />
+        </div>
+    )
+}
+
+export const MainSection = () => {
+    return (
         <>
-         <Header />
-         MAIN VIEW  Section 
+           <div className = "bg-[#f1f5f9]">
+             <div className = "grid grid-cols-2">
+                <div> Overview </div>
+                <div className="grid grid-cols-[1fr,1fr]">
+                    <div> Last Month </div>
+                    <div> <Dropdownimg color = "black" /> </div>
+                </div>
+             </div>
+           </div> 
         </>
     )
 }

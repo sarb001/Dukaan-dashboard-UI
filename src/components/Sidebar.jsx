@@ -18,7 +18,6 @@ export  const  Sidebar = () => {
         {   logo : <Appearancesimg /> , name : "Appearances" },
         {   logo : <Pluginsimg  /> , name : "Plugins" },
     ]
-    
 
     return (
         <>
@@ -35,7 +34,7 @@ export  const  Sidebar = () => {
                     <span> Nishyan </span>   
                     <span className="text-xs"> Visit  store </span>
                   </div>
-                  <div className="flex justify-center  items-center"> <Dropdownimg /> </div>
+                  <div className="flex justify-center  items-center"> <Dropdownimg color = "white" /> </div>
               </div>
 
             {/* options List  */}
