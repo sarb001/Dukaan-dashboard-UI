@@ -1,4 +1,4 @@
-import { Dropdownimg, Magnifyglassicon, Questionimg, SpeakerIcon, ToggleIcon } from "../images/Allimages"
+import { Downloadimg, Dropdownimg, Magnifyglassicon, Marketingimg, Questionimg, SpeakerIcon, ToggleIcon, TwosidedArrowimg } from "../images/Allimages"
 
 export  const  Mainview = () => {
     return (
@@ -46,9 +46,9 @@ export  const Header  = () => {
 export const MainSection = () => {
 
     const Cardsinfo = [
-        { cardstext : "Next Payout"  , price : "2312.23" , orders  : 23 , Nextpayoutdate : "Today 04:00PM" },
-        { cardstext : "Next Payout"  , price : "92,312.20" , orders  : 13 , },
-        { cardstext : "Next Payout"  , price : "23,92,312.19" , orders  : "" , },
+        { cardstext : "Next Payout"  , price : "2312.23" , orders  : 23 , Nextpayoutdate : "Today 04:00PM" ,text : "text-white" , background : "bg-[#146eb4]" },
+        { cardstext : "Amount Pending"  , price : "92,312.20" , orders  : 13 , },
+        { cardstext : "Amount Processed"  , price : "23,92,312.19" , orders  : "" , },
     ]
 
     const  TrnsxList = [
@@ -80,18 +80,61 @@ export const MainSection = () => {
 
     return (
         <>
-           <div className = "bg-[#f1f5f9]">
+           <div className = "bg-[#f1f5f9] p-8  ">
 
-             <div className = "grid grid-cols-2">
+             <div className = "grid grid-cols-[6fr,1fr]">
                 <div> Overview </div>
-                <div className="grid grid-cols-[1fr,1fr]">
-                    <div> Last Month </div>
-                    <div> <Dropdownimg color = "black" /> </div>
+                <div className="grid grid-cols-[6fr,1.5fr] bg-white p-1">
+                    <div className="pl-2"> Last Month </div>
+                    <div> <Dropdownimg  color = "black" /> </div>
                 </div>
              </div>
 
                 {/* Cards layout */}
+            <div className="pt-4">
+                 {Cardsinfo?.map(i => {
+                    return (
+                        <div>
+                            <div className =  {`${i?.text} ${i?.background}`}> 
+                                <div className="grid grid-cols-2"> 
+                                    <div> {i?.cardstext} </div>
+                                    <div> <Questionimg /> </div>
+                                </div>
+
+                                <div className="grid grid-cols-2">
+                                    <div>   ₹{i?.price} </div>
+                                    <div> {i?.orders ? `${i?.orders} orders` : ""}  </div>
+                                 </div>
+                            </div>
+
+                             {i?.Nextpayoutdate ? `${i?.Nextpayoutdate}` : ""}
+                            <div> </div>
+                        </div>
+                    )
+                 })}
+            </div>
               <div>  Payouts </div>
+
+                {/* Payouts section */}
+               <div className="bg-white">
+
+                    <div>
+
+                        <div> 
+                         <Marketingimg />
+                         <input type = "text" placeholder="OrderID or transaction ID" />
+                        </div>
+
+                        <div>
+                            <div>  Sort <TwosidedArrowimg /> </div>
+                            <div> <Downloadimg /> </div>
+                        </div>
+                    </div>
+
+                    <div>
+
+                    </div>
+               </div>
            </div> 
         </>
     )
