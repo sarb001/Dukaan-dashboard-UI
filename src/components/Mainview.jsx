@@ -1,4 +1,6 @@
-import { Downloadimg, Dropdownimg, Magnifyglassicon, Marketingimg, Questionimg, SpeakerIcon, ToggleIcon, TwosidedArrowimg } from "../images/Allimages"
+import { Downloadimg, Dropdownimg, Magnifyglassicon, Marketingimg, Questionimg, SpeakerIcon, ToggleIcon, TwosidedArrowimg } from "../images/Allimages";
+import { IoIosArrowForward } from "react-icons/io";
+
 
 export  const  Mainview = () => {
     return (
@@ -47,8 +49,8 @@ export const MainSection = () => {
 
     const Cardsinfo = [
         { cardstext : "Next Payout"  , price : "2312.23" , orders  : 23 , Nextpayoutdate : "Today 04:00PM" ,text : "text-white" , background : "bg-[#146eb4]" },
-        { cardstext : "Amount Pending"  , price : "92,312.20" , orders  : 13 , },
-        { cardstext : "Amount Processed"  , price : "23,92,312.19" , orders  : "" , },
+        { cardstext : "Amount Pending"  , price : "92,312.20" , orders  : 13 ,  background : "bg-white" },
+        { cardstext : "Amount Processed"  , price : "23,92,312.19" , orders  : "" , background : "bg-white" },
     ]
 
     const  TrnsxList = [
@@ -91,24 +93,37 @@ export const MainSection = () => {
              </div>
 
                 {/* Cards layout */}
-            <div className="pt-4">
+            <div className="pt-4 grid grid-cols-3 gap-4 justify-end pr-0 ">
                  {Cardsinfo?.map(i => {
                     return (
-                        <div>
-                            <div className =  {`${i?.text} ${i?.background}`}> 
-                                <div className="grid grid-cols-2"> 
-                                    <div> {i?.cardstext} </div>
-                                    <div> <Questionimg /> </div>
+                        <div className="">
+                            <div>
+                                <div className =  {` grid grid-rows-2 gap-2 justify-center ${i?.text} ${i?.background}
+                                px-2 py-10                       
+                                rounded-md `}> 
+
+                                    <div className="items-center flex"> 
+                                            <div className="text-[14px] pr-4"> {i?.cardstext} </div>
+                                             <Questionimg />
+                                    </div>
+
+                                    <div className="grid grid-cols-[4fr,2fr] gap-0">
+                                        <div className="text-2xl">   ₹{i?.price} </div>
+                                        <div className="flex border-b-2 text-[14px]  border-black w-20"> 
+                                            <div className="flex items-center">    {i?.orders ? `${i?.orders} orders` : ""} </div>
+                                            <div className="flex items-center"> <IoIosArrowForward /> </div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div className="grid grid-cols-2">
-                                    <div>   ₹{i?.price} </div>
-                                    <div> {i?.orders ? `${i?.orders} orders` : ""}  </div>
-                                 </div>
+                                    {i?.Nextpayoutdate ? (
+                                        <div  className="p-2 grid grid-cols-[4fr,3fr]">
+                                        <div>  Next Payout date: </div>
+                                        <div> {i?.Nextpayoutdate ? `${i?.Nextpayoutdate}` : ""}</div>
+                                    </div>
+                                    )
+                                    : ""}
                             </div>
-
-                             {i?.Nextpayoutdate ? `${i?.Nextpayoutdate}` : ""}
-                            <div> </div>
                         </div>
                     )
                  })}
