@@ -96,28 +96,28 @@ export const MainSection = () => {
             <div className="pt-4 grid grid-cols-3 gap-4 justify-end pr-0 ">
                  {Cardsinfo?.map(i => {
                     return (
-                        <div className="">
-                            <div>
-                                <div className =  {` grid grid-rows-2 gap-2 justify-center ${i?.text} ${i?.background}
-                                px-2 py-10                       
-                                rounded-md `}> 
+                        <div>
+                            <div className= {` ${i?.background} rounded-md `}>
+                                    <div className =  {` grid grid-rows-2 gap-2 justify-center ${i?.text}
+                                    px-2 py-10                       
+                                     `}> 
 
-                                    <div className="items-center flex"> 
-                                            <div className="text-[14px] pr-4"> {i?.cardstext} </div>
-                                             <Questionimg />
-                                    </div>
+                                        <div className="items-center flex"> 
+                                                <div className="text-[14px] pr-4"> {i?.cardstext} </div>
+                                                <Questionimg />
+                                        </div>
 
-                                    <div className="grid grid-cols-[4fr,2fr] gap-0">
-                                        <div className="text-2xl">   ₹{i?.price} </div>
-                                        <div className="flex border-b-2 text-[14px]  border-black w-20"> 
-                                            <div className="flex items-center">    {i?.orders ? `${i?.orders} orders` : ""} </div>
-                                            <div className="flex items-center"> <IoIosArrowForward /> </div>
+                                        <div className="grid grid-cols-[4fr,2fr] gap-0">
+                                            <div className="text-2xl">   ₹{i?.price} </div>
+                                            <div className="flex  text-[14px] w-20"> 
+                                                <div className="flex items-center border-b-2 border-white ">    {i?.orders ? `${i?.orders} orders` : ""} </div>
+                                                <div className="flex items-center">  <IoIosArrowForward /> </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
                                     {i?.Nextpayoutdate ? (
-                                        <div  className="p-2 grid grid-cols-[4fr,3fr]">
+                                        <div  className="p-2 rounded-md grid grid-cols-[4fr,3fr] text-white bg-[#0e4f82]">
                                         <div>  Next Payout date: </div>
                                         <div> {i?.Nextpayoutdate ? `${i?.Nextpayoutdate}` : ""}</div>
                                     </div>
