@@ -128,24 +128,35 @@ export const MainSection = () => {
                     )
                  })}
             </div>
-              <div>  Payouts </div>
+              <div className="py-4">  Payouts </div>
 
                 {/* Payouts section */}
-               <div className="bg-white">
+               <div className="bg-green-300 rounded-lg ">
+
+                    <div className="grid grid-cols-[0fr,3fr] p-4 justify-between justify-items-end ">
 
                     <div>
-
-                        <div> 
-                         <Marketingimg />
-                         <input type = "text" placeholder="OrderID or transaction ID" />
-                        </div>
-
-                        <div>
-                            <div>  Sort <TwosidedArrowimg /> </div>
-                            <div> <Downloadimg /> </div>
-                        </div>
+                            <div className="flex  p-2 grid-cols-[1fr,3fr] items-center bg-[#f2f2f2] rounded-md "> 
+                                <div className="grid items-center">  <Magnifyglassicon /> </div>
+                                <input type = "text" placeholder="OrderID or transaction ID"  className=" pl-2 border-0 outline-none bg-[#f2f2f2]" />
+                            </div>
                     </div>
 
+                        <div className="grid  items-center gap-6 grid-cols-[2fr,1fr] justify-between"> 
+
+                            <div className = "border-white border-[1px] rounded-[5px] grid grid-cols-2 p-1 "> 
+                                 <div> Sort  </div>
+                                 <div className="grid justify-center items-center "> <TwosidedArrowimg />  </div>
+                            </div>
+
+                            <div className="grid justify-center border-white rounded-[5px] border-[1px] py-1 "> 
+                                 <Downloadimg /> 
+                            </div>
+                        </div>
+
+                    </div>
+
+                        {/* Transx Layout */}
                     <div>
 
                     </div>
