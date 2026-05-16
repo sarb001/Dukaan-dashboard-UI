@@ -55,28 +55,28 @@ export const MainSection = () => {
 
     const  TrnsxList = [
         {
-            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "Today,08:45 PM" , OrderAmount : "1125.00"
+            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "Today,08:45 PM" , OrderAmount : "₹1125.00"
         },
         {
-            orderId :  "#281209", Status : "Processing" , TransactionID : "13163445747" , RefundDate : "Yesterday,3:00 PM" , OrderAmount : "1125.00"
+            orderId :  "#281209", Status : "Processing" , TransactionID : "13163445747" , RefundDate : "Yesterday,3:00 PM" , OrderAmount : "₹1125.00"
         },
         {
-            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "11 Jul 2023,03:00 PM" , OrderAmount : "1125.00"
+            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "11 Jul 2023,03:00 PM" , OrderAmount : "₹1125.00"
         },
         {
-            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "12 Jul 2023,04:00 AM" , OrderAmount : "1125.00"
+            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "12 Jul 2023,04:00 AM" , OrderAmount : "₹1125.00"
         },
         {
-            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "12 Jul 2023,04:00 AM" , OrderAmount : "1125.00"
+            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "12 Jul 2023,04:00 AM" , OrderAmount : "₹1125.00"
         },
         {
-            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "12 Jul 2023,05:00 AM" , OrderAmount : "1125.00"
+            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "12 Jul 2023,05:00 AM" , OrderAmount : "₹1125.00"
         },
         {
-            orderId :  "#281209", Status : "Processing" , TransactionID : "13163445747" , RefundDate : "13 Jul 2023,03:00 PM" , OrderAmount : "1125.00"
+            orderId :  "#281209", Status : "Processing" , TransactionID : "13163445747" , RefundDate : "13 Jul 2023,03:00 PM" , OrderAmount : "₹1125.00"
         },
         {
-            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "12 Jul 2023,05:00 PM" , OrderAmount : "1125.00"
+            orderId :  "#281209", Status : "Successful" , TransactionID : "13163445747" , RefundDate : "12 Jul 2023,05:00 PM" , OrderAmount : "₹1125.00"
         },
     ]
 
@@ -131,25 +131,25 @@ export const MainSection = () => {
               <div className="py-4">  Payouts </div>
 
                 {/* Payouts section */}
-               <div className="bg-green-300 rounded-lg ">
+               <div className="bg-white rounded-lg ">
 
                     <div className="grid grid-cols-[0fr,3fr] p-4 justify-between justify-items-end ">
 
                     <div>
-                            <div className="flex  p-2 grid-cols-[1fr,3fr] items-center bg-[#f2f2f2] rounded-md "> 
+                            <div className="flex  p-2 grid-cols-[1fr,3fr] items-center bg-[#f2f2f2] rounded-md border-[#d9d9d9] border-[1px]"> 
                                 <div className="grid items-center">  <Magnifyglassicon /> </div>
-                                <input type = "text" placeholder="OrderID or transaction ID"  className=" pl-2 border-0 outline-none bg-[#f2f2f2]" />
+                                <input type = "text" placeholder="Order ID or transaction ID"  className=" pl-2 border-0 outline-none bg-[#f2f2f2]" />
                             </div>
                     </div>
 
                         <div className="grid  items-center gap-6 grid-cols-[2fr,1fr] justify-between"> 
 
-                            <div className = "border-white border-[1px] rounded-[5px] grid grid-cols-2 p-1 "> 
+                            <div className = "border-[#d9d9d9] border-[1px] rounded-[5px] grid grid-cols-2 p-1 "> 
                                  <div> Sort  </div>
                                  <div className="grid justify-center items-center "> <TwosidedArrowimg />  </div>
                             </div>
 
-                            <div className="grid justify-center border-white rounded-[5px] border-[1px] py-1 "> 
+                            <div className="grid justify-center border-[#d9d9d9] border-[1px] py-1 "> 
                                  <Downloadimg /> 
                             </div>
                         </div>
@@ -158,7 +158,26 @@ export const MainSection = () => {
 
                         {/* Transx Layout */}
                     <div>
-
+                            <div className="bg-gray-300">
+                                <tr>
+                                    <th> OrderID   </th>
+                                    <th> Status   </th>
+                                    <th> TransactionID   </th>
+                                    <th> Refund date   </th>
+                                    <th> Order amount   </th>
+                                </tr>
+                            </div>
+                            <div>
+                                {TrnsxList?.map(i => (
+                                    <tr>
+                                       <td> {i?.orderId}  </td> 
+                                       <td> {i?.Status}  </td> 
+                                       <td> {i?.TransactionID}  </td> 
+                                       <td> {i?.RefundDate}  </td> 
+                                       <td> {i?.OrderAmount}  </td> 
+                                    </tr>
+                                ))}
+                            </div>
                     </div>
                </div>
            </div> 
